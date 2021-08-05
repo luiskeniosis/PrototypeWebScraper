@@ -7,15 +7,14 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
-public class SearchEbay {
+public class AlphaSearch {
 	public static void startSearch(String URL) {
-		System.out.println("Starting WebScrape on eBay listings.");
+		System.out.println("Starting AlphaSearch.");
 		WebScrape.filterListings(buildDatabase(getPages(URL)));
-		System.out.println("eBay listings filtered and sorted!");
+		System.out.println("Listings filtered and sorted!");
 		WebScrape.postSearchReport();
 	}
-
-	//Gathers the Jsoup document of all pages of eBay results given an initial URL
+	
 	private static ArrayList<Document> getPages(String baseURL) {
 		ArrayList<Document> listingPages = new ArrayList<Document>();
 		int numListings = 0;

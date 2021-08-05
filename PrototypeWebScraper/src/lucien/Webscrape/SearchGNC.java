@@ -54,7 +54,7 @@ public class SearchGNC {
 	    try {
 		for (Element listing : page.select("div.product-tile")) {
 		    String listingName = listing.select("span.tile-product-name").text();
-		    Double itemCost = Double.parseDouble(listing.select("span.product-standard-price").text().replaceAll("[^.&&[^0-9]]", ""));
+		    Double itemCost = Double.parseDouble(listing.select("span.product-standard-price").text().replaceAll("[^0-9.]", ""));
 		    Double totalCost;
 		    if(itemCost > 49)
 			totalCost = itemCost;
